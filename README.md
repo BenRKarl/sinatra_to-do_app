@@ -8,9 +8,9 @@ Assuming you have your repo set up, here's the first few steps I normally take:
 
 First thing is to get the database set up. This is done from the command line:
 
-`$ psql`
-`# CREATE DATABASE sinatra_todo_app;` (Here I decided to call this database 'sinatra_todo_app.' Don't forget the semicolon at the end!)
-`\c sinatra_todo_app` (This takes you into the database)
+    `$ psql`
+    `# CREATE DATABASE sinatra_todo_app;` (Here I decided to call this database 'sinatra_todo_app.' Don't forget the semicolon at the end!)
+    `\c sinatra_todo_app` (This takes you into the database)
 
 Now that we're in the database, we'll want to set up the schema for our model. For this to-do app we'll only need one model, therefore only one table. You can write these commands one line at a time, or as one big line, just keep in mind that SQL will not acknowledge a command until you provide it with a semi-colon.
 
@@ -28,13 +28,13 @@ Now we have a database model for a to-do item that holds its unique id, descript
 Anyway, now we need an app to take advantage of this awesome new database. Here are my first steps for this:
 
 1. `touch` the following files:
-  *app.rb
-  *config.rb
-  *Gemfile
+    *app.rb
+    *config.rb
+    *Gemfile
 
 2. `mkdir` the following folders:
-  * models
-  * public
-  * views
+    * models
+    * public
+    * views
 
 This is probably a good time to remind you that you can quit `psql` by typing `/q`. Now go back up and make sure to complete steps 1 & 2 and take a drink of water.
