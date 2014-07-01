@@ -6,8 +6,13 @@
       <li>
         <b>To-do:</b> <%= item.description %></br>
         <b>Due:</b> <%= item.due_date %></br>
-        <button action="/to_dos/<%= item.id %>/edit">edit</button>
-        <button action="/to_dos/<%= item.id %>/delete">delete</button>
+        <form action="/to_dos/<%= item.id %>/edit" method="get">
+          <input type="submit" value="Edit">
+        </form>
+        <form action="/to_dos/<%= item.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
       </li>
     <% end %>
   </ul>
