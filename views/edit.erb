@@ -1,0 +1,8 @@
+<h1>To-don't?</h1>
+
+<form action="/to_dos/<%= @to_do.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="description" value="<%= @to_do.description %>">
+  <input type="text" name="due_date" value="<%= @to_do.due_date %>">
+  <input type="submit" value="Update Item">
+</form>

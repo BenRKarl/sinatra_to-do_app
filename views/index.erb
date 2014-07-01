@@ -1,0 +1,18 @@
+<h1>Sinatra To-Do!</h1>
+
+<div class="to-do-list">
+  <ul>
+    <% @to_dos.each do |item| %>
+      <li>
+        <b>To-do:</b> <%= item.description %></br>
+        <b>Due:</b> <%= item.due_date %></br>
+        <button action="/to_dos/<%= item.id %>/edit">edit</button>
+        <button action="/to_dos/<%= item.id %>/delete">delete</button>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<form action="/to_dos/new" method="get">
+  <input type="submit" value="Add To-do Item">
+</form>

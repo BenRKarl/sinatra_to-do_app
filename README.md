@@ -15,7 +15,7 @@ First thing is to get the database set up. This is done from the command line:
 Now that we're in the database, we'll want to set up the schema for our model. For this to-do app we'll only need one model, therefore only one table. You can write these commands one line at a time, or as one big line, just keep in mind that SQL will not acknowledge a command until you provide it with a semi-colon.
 
 ```
-=# CREATE TABLE to_do
+=# CREATE TABLE to_dos
 =# (
 =# id serial4 PRIMARY KEY,
 =# description varchar(255),
@@ -23,7 +23,7 @@ Now that we're in the database, we'll want to set up the schema for our model. F
 =# );
 ```
 
-Now we have a database model for a to-do item that holds its unique id, description, and due date! You can verify that your commands worked by typing `\d` to see your tables. Notice the `id_seq` table that we didn't create? That keeps track of each entry's unique id so we never have to worry about duplicate rows.
+Now we have a database model for a to-do item that holds its unique id, description, and due date! It's important to make the table name plural because ActiveRecord will make that assumption when accessing via the model. You can verify that your commands worked by typing `\d` to see your tables. Notice the `id_seq` table that we didn't create? That keeps track of each entry's unique id so we never have to worry about duplicate rows.
 
 Anyway, now we need an app to take advantage of this awesome new database. Here are my first steps for this:
 
@@ -62,3 +62,6 @@ ActiveRecord::Base.establish_connection(
 )
 ```
 
+This calls on the ActiveRecord::Base class that came along with the gem we bundled earlier, tells it that we're using PostgreSQL to interact with our database and that it's name is 'sinatra_todo_app'.
+
+Now's a good time to save and commit. This is the point where I begin filling out the models and views for the application, so go take a look at what lies in the three folders above.
